@@ -1,6 +1,7 @@
 package hpe.model;
 
 public class Result {
+
     String value;
 
     public String getValue() {
