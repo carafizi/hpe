@@ -18,9 +18,9 @@ public class HpeResource {
         Evaluator evaluator = new Evaluator();
         Result result = new Result();
         try {
-            result.setValue(evaluator.evaluate(request).toString());
+            result.setResult(evaluator.evaluate(request).toString());
         }catch(Exception e){
-            result.setValue(e.getLocalizedMessage());
+            result.setResult(e.getLocalizedMessage());
         }
         return result;
     }

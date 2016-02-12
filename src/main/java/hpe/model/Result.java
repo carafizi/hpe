@@ -2,13 +2,13 @@ package hpe.model;
 
 public class Result {
 
-    String value;
+    String result;
 
-    public String getValue() {
-        return value;
+    public String getResult() {
+        return result;
     }
 
-    public void setValue(String value) {
-        this.value = value;
+    public void setResult(String result) {
+        this.result = result;
     }
 }
