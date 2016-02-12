@@ -1,5 +1,10 @@
 Application provides a RESTful service to calculate result from a provided algebraic formula represented in POSTFIX notation.
-It's bundled with an embedded tomcat, so you don't need to deploy war anywhere. Just go to the root directory of the bundle
+
+Service supports the following binary operators: + - * /
+Service supports the following unary operators: sizeof(string) and abs(int)
+Service supports string and numeric operands.
+
+The applications is bundled with an embedded tomcat, so you don't need to deploy war anywhere. Just go to the root directory of the bundle
 and run:
 
 mvn tomcat7:run
