@@ -3,6 +3,9 @@ package hpe.model.operands;
 import hpe.model.Token;
 import hpe.model.TokenVisitor;
 
+/**
+ * This class represents a string operand
+ */
 public class OperandString implements Token {
 
     private String value;

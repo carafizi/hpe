@@ -12,7 +12,6 @@ import javax.ws.rs.core.MediaType;
 @Path("hpe")
 public class HpeResource {
 
-
     @POST
     public Result evaluateFormula(Request request){
         Evaluator evaluator = new Evaluator();

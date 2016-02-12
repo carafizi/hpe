@@ -4,8 +4,15 @@ import hpe.model.*;
 
 import java.util.*;
 
+/**
+ * Evaluator of the Request containing a collection of input string elements
+ */
 public class Evaluator {
 
+    /**
+     * @param request
+     * @return Double
+     */
     public Double evaluate(Request request) {
         List<Token> tokens = transformRequestElements(request);
         Stack<Object> stack = new Stack<>();
@@ -17,7 +24,7 @@ public class Evaluator {
     }
 
 
-    private static List<Token> transformRequestElements(Request request){
+    private List<Token> transformRequestElements(Request request){
         List<Token> inputTokens = new ArrayList<>();
         for (String requestElement:request.getElements()){
             inputTokens.add(TokenFactory.getToken(requestElement));

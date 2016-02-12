@@ -5,9 +5,15 @@ import hpe.model.operands.OperandString;
 import hpe.model.operators.*;
 import org.apache.commons.lang3.math.NumberUtils;
 
-
+/**
+ * Token factory returning a Token object according to the input character
+ */
 public class TokenFactory {
 
+    /**
+     * @param value String value
+     * @return Token - Operator or Operand
+     */
     public static Token getToken(String value) {
         if (NumberUtils.isNumber(value)) {
             return new OperandDouble(NumberUtils.createDouble(value));

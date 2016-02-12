@@ -15,6 +15,7 @@ Input example:
 
 infix formula:   (3+4) * 5 + sizeof(count_me) + abs(-17)
 postfix formula: 3 4 + 5 * count_me sizeof + 17 - abs +
+
 json to be used in the POST request body:
 {
   "elements":["3", "4", "+", "5", "*", "count_me", "sizeof", "+", "-17", "abs", "+"]

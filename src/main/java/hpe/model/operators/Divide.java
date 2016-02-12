@@ -5,6 +5,9 @@ import hpe.model.TokenVisitor;
 
 import java.util.Stack;
 
+/**
+ * This class represents divide operator
+ */
 public class Divide implements Token {
 
     @Override

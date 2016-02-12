@@ -3,6 +3,9 @@ package hpe.model.operators;
 import hpe.model.Token;
 import hpe.model.TokenVisitor;
 
+/**
+ * This class represents multiply operator
+ */
 public class Multiply implements Token {
 
     @Override

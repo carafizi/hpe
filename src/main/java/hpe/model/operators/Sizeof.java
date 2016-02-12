@@ -3,6 +3,9 @@ package hpe.model.operators;
 import hpe.model.Token;
 import hpe.model.TokenVisitor;
 
+/**
+ * This class represents sizeof function
+ */
 public class Sizeof implements Token {
 
     @Override

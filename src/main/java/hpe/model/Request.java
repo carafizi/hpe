@@ -2,6 +2,9 @@ package hpe.model;
 
 import java.util.List;
 
+/**
+ * Request object serialized from the input JSON
+ */
 public class Request {
 
     List<String> elements;

@@ -5,6 +5,9 @@ import hpe.model.TokenVisitor;
 
 import java.util.Stack;
 
+/**
+ * This class represents abs function
+ */
 public class Abs implements Token {
 
     @Override
