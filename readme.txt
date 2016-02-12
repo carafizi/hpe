@@ -1,4 +1,4 @@
-Application provides a RESTful service to calculate result from a provided algebraic formula represented in POSTFIX notation.
+Application provides a RESTful web service to calculate result from a provided algebraic formula represented in POSTFIX notation.
 
 Service supports the following binary operators: + - * /
 Service supports the following unary operators: sizeof(string) and abs(int)
