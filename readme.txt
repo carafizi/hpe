@@ -36,4 +36,4 @@ Content-type - application/json
 Request body: the json example from above or any other json representation of a formula in a postfix notation
 
 
-Response of the service is a json representation of the Result object with a value representing either calculation result of error string
+Response of the service is a json representation of the Result object with a value representing either calculation result or error string
