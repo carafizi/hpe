@@ -3,7 +3,7 @@ package hpe.model;
 import java.util.List;
 
 /**
- * Request object serialized from the input JSON
+ * Request object deserialized from the input JSON
  */
 public class Request {
 
