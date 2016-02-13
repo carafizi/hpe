@@ -1,5 +1,7 @@
 package hpe.model;
 
+import java.util.Stack;
+
 public  interface Token {
-     void accept(TokenVisitor tokenVisitor);
+     void process (Stack<Object> stack);
 }

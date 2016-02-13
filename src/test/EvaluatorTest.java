@@ -1,8 +1,7 @@
-
 import hpe.evaluation.Evaluator;
 import hpe.model.Request;
 import org.testng.Assert;
-import org.testng.annotations.*;
+import org.testng.annotations.Test;
 
 import java.util.Arrays;
 import java.util.List;

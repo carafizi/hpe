@@ -1,17 +1,20 @@
 package hpe.model.operators;
 
 import hpe.model.Token;
-import hpe.model.TokenVisitor;
 
 import java.util.Stack;
 
 /**
  * This class represents abs function
  */
-public class Abs implements Token {
+public class Abs extends UnaryOperator implements Token {
 
     @Override
-    public void accept(TokenVisitor tokenVisitor) {
-        tokenVisitor.visit(this);
+    public void process(Stack<Object> stack) {
+        operand = stack.pop();
+        if (!operand.getClass().equals(Double.class)) {
+            throw new IllegalArgumentException("Invalid token [" + (operand).toString() + "] for the abs function");
+        }
+        stack.push(Math.abs((double) operand));
     }
 }

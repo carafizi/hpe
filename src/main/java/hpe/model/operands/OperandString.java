@@ -1,7 +1,8 @@
 package hpe.model.operands;
 
 import hpe.model.Token;
-import hpe.model.TokenVisitor;
+
+import java.util.Stack;
 
 /**
  * This class represents a string operand
@@ -14,12 +15,9 @@ public class OperandString implements Token {
         this.value =value;
     }
 
-    public String getValue() {
-        return value;
-    }
 
     @Override
-    public void accept(TokenVisitor tokenVisitor) {
-        tokenVisitor.visit(this);
+    public void process(Stack<Object> stack) {
+        stack.push(value);
     }
 }

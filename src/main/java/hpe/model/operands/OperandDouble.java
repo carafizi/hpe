@@ -1,7 +1,8 @@
 package hpe.model.operands;
 
 import hpe.model.Token;
-import hpe.model.TokenVisitor;
+
+import java.util.Stack;
 
 /**
  * This class represents a numeric operand
@@ -15,11 +16,7 @@ public class OperandDouble implements Token {
     }
 
     @Override
-    public void accept(TokenVisitor tokenVisitor) {
-        tokenVisitor.visit(this);
-    }
-
-    public Double getValue() {
-        return value;
+    public void process(Stack<Object> stack) {
+        stack.push(value);
     }
 }

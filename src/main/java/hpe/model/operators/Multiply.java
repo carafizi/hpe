@@ -1,15 +1,18 @@
 package hpe.model.operators;
 
 import hpe.model.Token;
-import hpe.model.TokenVisitor;
+
+import java.util.Stack;
 
 /**
  * This class represents multiply operator
  */
-public class Multiply implements Token {
+public class Multiply extends BinaryOperator implements Token {
 
     @Override
-    public void accept(TokenVisitor tokenVisitor) {
-        tokenVisitor.visit(this);
+    public void process(Stack<Object> stack) {
+        operand2 = stack.pop();
+        operand1 = stack.pop();
+        stack.push((Double) operand1 * (Double) operand2);
     }
 }

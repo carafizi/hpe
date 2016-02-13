@@ -1,8 +1,12 @@
 package hpe.evaluation;
 
-import hpe.model.*;
+import hpe.model.Request;
+import hpe.model.Token;
+import hpe.model.TokenFactory;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Stack;
 
 /**
  * Evaluator of the Request containing a collection of input string elements
@@ -16,9 +20,8 @@ public class Evaluator {
     public Double evaluate(Request request) {
         List<Token> tokens = transformRequestElements(request);
         Stack<Object> stack = new Stack<>();
-        TokenVisitor visitor = new TokenVisitorImpl(stack);
         for (Token token : tokens) {
-            token.accept(visitor);
+            token.process(stack);
         }
         return (Double) stack.pop();
     }

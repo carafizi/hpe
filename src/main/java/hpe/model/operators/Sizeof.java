@@ -1,15 +1,21 @@
 package hpe.model.operators;
 
 import hpe.model.Token;
-import hpe.model.TokenVisitor;
+
+import java.util.Stack;
 
 /**
  * This class represents sizeof function
  */
-public class Sizeof implements Token {
+public class Sizeof extends UnaryOperator implements Token {
+
 
     @Override
-    public void accept(TokenVisitor tokenVisitor) {
-        tokenVisitor.visit(this);
+    public void process(Stack<Object> stack) {
+        operand = stack.pop();
+        if (!operand.getClass().equals(String.class)) {
+            throw new IllegalArgumentException("Invalid token [" + (operand).toString() + "] for the sizeof function");
+        }
+        stack.push((double) ((String) operand).length());
     }
 }
