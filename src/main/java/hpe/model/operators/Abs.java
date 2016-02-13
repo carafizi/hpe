@@ -11,7 +11,7 @@ public class Abs extends UnaryOperator implements Token {
 
     @Override
     public void process(Stack<Object> stack) {
-        operand = stack.pop();
+        init(stack);
         if (!operand.getClass().equals(Double.class)) {
             throw new IllegalArgumentException("Invalid token [" + (operand).toString() + "] for the abs function");
         }

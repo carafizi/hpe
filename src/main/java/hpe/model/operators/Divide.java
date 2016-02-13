@@ -11,8 +11,7 @@ public class Divide extends BinaryOperator implements Token {
 
     @Override
     public void process(Stack<Object> stack) {
-        operand2 = stack.pop();
-        operand1 = stack.pop();
+        init(stack);
         stack.push((Double) operand1 / (Double) operand2);
     }
 }
