@@ -17,6 +17,39 @@ public class EvaluatorTest {
         Assert.assertEquals(evaluator.evaluate(request), new Double(60));
     }
 
+    @Test(expectedExceptions = IllegalArgumentException.class)
+    public void testEvaluateInvalidOperandForSizeof() throws Exception {
+
+        Request request = buildRequest("3 4 + 5 * 100 sizeof + -17 abs +");
+        Evaluator evaluator = new Evaluator();
+        Assert.assertEquals(evaluator.evaluate(request), new Double(60));
+    }
+
+    @Test(expectedExceptions = IllegalArgumentException.class)
+    public void testEvaluateInvalidOperandForAbs() throws Exception {
+
+        Request request = buildRequest("3 4 + 5 * count_me sizeof + invalid abs +");
+        Evaluator evaluator = new Evaluator();
+        Assert.assertEquals(evaluator.evaluate(request), new Double(60));
+    }
+
+    @Test(expectedExceptions = IllegalArgumentException.class)
+    public void testEvaluateInvalidOperandForPlus() throws Exception {
+
+        Request request = buildRequest("3 invalid + 5 * count_me sizeof + -17 abs +");
+        Evaluator evaluator = new Evaluator();
+        Assert.assertEquals(evaluator.evaluate(request), new Double(60));
+    }
+
+    @Test(expectedExceptions = IllegalArgumentException.class)
+    public void testEvaluateInvalidOperandForMultiply() throws Exception {
+
+        Request request = buildRequest("3 4 + invalid * count_me sizeof + -17 abs +");
+        Evaluator evaluator = new Evaluator();
+        Assert.assertEquals(evaluator.evaluate(request), new Double(60));
+    }
+
+
 
     private Request buildRequest(String str){
         List<String> elements = Arrays.asList(str.split(" "));
