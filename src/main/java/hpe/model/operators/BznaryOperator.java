@@ -2,7 +2,7 @@ package hpe.model.operators;
 
 import java.util.Stack;
 
-public abstract class BinaryOperator {
+public abstract class BznaryOperator {
     protected Object operand1;
     protected Object operand2;
 

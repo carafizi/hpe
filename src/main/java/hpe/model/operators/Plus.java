@@ -7,7 +7,7 @@ import java.util.Stack;
 /**
  * This class represents plus operator
  */
-public class Plus extends BinaryOperator implements Token {
+public class Plus extends BznaryOperator implements Token {
 
     @Override
     public void process(Stack<Object> stack) {
