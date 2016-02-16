@@ -24,7 +24,7 @@ public class EvaluatorTest {
 
         Request request = buildRequest("3 4 + 5 * 100 sizeof + -17 abs +");
         Evaluator evaluator = new Evaluator();
-        Assert.assertEquals(evaluator.evaluate(request), new Double(60));
+        evaluator.evaluate(request);
     }
 
     @Test(expectedExceptions = IllegalArgumentException.class)
@@ -32,7 +32,7 @@ public class EvaluatorTest {
 
         Request request = buildRequest("3 4 + 5 * count_me sizeof + invalid abs +");
         Evaluator evaluator = new Evaluator();
-        Assert.assertEquals(evaluator.evaluate(request), new Double(60));
+        evaluator.evaluate(request);
     }
 
     @Test(expectedExceptions = IllegalArgumentException.class)
@@ -40,7 +40,7 @@ public class EvaluatorTest {
 
         Request request = buildRequest("3 invalid + 5 * count_me sizeof + -17 abs +");
         Evaluator evaluator = new Evaluator();
-        Assert.assertEquals(evaluator.evaluate(request), new Double(60));
+        evaluator.evaluate(request);
     }
 
     @Test(expectedExceptions = IllegalArgumentException.class)
@@ -48,7 +48,7 @@ public class EvaluatorTest {
 
         Request request = buildRequest("3 4 + invalid * count_me sizeof + -17 abs +");
         Evaluator evaluator = new Evaluator();
-        Assert.assertEquals(evaluator.evaluate(request), new Double(60));
+        evaluator.evaluate(request);
     }
 
 
