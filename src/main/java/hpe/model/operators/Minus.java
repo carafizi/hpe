@@ -7,7 +7,7 @@ import java.util.Stack;
 /**
  * This class represents minus operator
  */
-public class Minus extends BznaryOperator implements Token {
+public class Minus extends BinaryOperator implements Token {
 
     @Override
     public void process(Stack<Object> stack) {

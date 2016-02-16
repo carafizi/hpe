@@ -7,7 +7,7 @@ import java.util.Stack;
 /**
  * This class represents divide operator
  */
-public class Divide extends BznaryOperator implements Token {
+public class Divide extends BinaryOperator implements Token {
 
     @Override
     public void process(Stack<Object> stack) {
