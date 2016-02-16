@@ -16,30 +16,54 @@ public class TokenVisitorImpl implements TokenVisitor{
 
     @Override
     public void visit(Plus token) {
-        Double operand2 = (Double) stack.pop();
-        Double operand1 = (Double) stack.pop();
-        stack.push(operand1 + operand2);
+        Object operand2 = stack.pop();
+        Object operand1 = stack.pop();
+        if(!operand1.getClass().equals(Double.class)){
+            throw new IllegalArgumentException("Invalid operand [" + (operand1).toString() + "] for plus operator");
+        }
+        if(!operand2.getClass().equals(Double.class)){
+            throw new IllegalArgumentException("Invalid operand [" + (operand2).toString() + "] for plus operator");
+        }
+        stack.push((Double)operand1 + (Double) operand2);
     }
 
     @Override
     public void visit(Minus token) {
-        Double operand2 = (Double) stack.pop();
-        Double operand1 = (Double) stack.pop();
-        stack.push(operand1 - operand2);
+        Object operand2 = stack.pop();
+        Object operand1 = stack.pop();
+        if(!operand1.getClass().equals(Double.class)){
+            throw new IllegalArgumentException("Invalid operand [" + (operand1).toString() + "] for minus operator");
+        }
+        if(!operand2.getClass().equals(Double.class)){
+            throw new IllegalArgumentException("Invalid operand [" + (operand2).toString() + "] for minus operator");
+        }
+        stack.push((Double)operand1 - (Double) operand2);
     }
 
     @Override
     public void visit(Multiply token) {
-        Double operand2 = (Double) stack.pop();
-        Double operand1 = (Double) stack.pop();
-        stack.push(operand1 * operand2);
+        Object operand2 = stack.pop();
+        Object operand1 = stack.pop();
+        if(!operand1.getClass().equals(Double.class)){
+            throw new IllegalArgumentException("Invalid operand [" + (operand1).toString() + "] for multiply operator");
+        }
+        if(!operand2.getClass().equals(Double.class)){
+            throw new IllegalArgumentException("Invalid operand [" + (operand2).toString() + "] for multiply operator");
+        }
+        stack.push((Double)operand1 * (Double) operand2);
     }
 
     @Override
     public void visit(Divide token) {
-        Double operand2 = (Double) stack.pop();
-        Double operand1 = (Double) stack.pop();
-        stack.push(operand1/operand2);
+        Object operand2 = stack.pop();
+        Object operand1 = stack.pop();
+        if(!operand1.getClass().equals(Double.class)){
+            throw new IllegalArgumentException("Invalid operand [" + (operand1).toString() + "] for divide operator");
+        }
+        if(!operand2.getClass().equals(Double.class)){
+            throw new IllegalArgumentException("Invalid operand [" + (operand2).toString() + "] for divide operator");
+        }
+        stack.push((Double)operand1/(Double)operand2);
     }
 
     @Override
