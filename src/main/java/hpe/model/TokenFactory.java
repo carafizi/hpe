@@ -45,7 +45,7 @@ public class TokenFactory {
             if (value.getClass().equals(String.class)) {
                 return new OperandString(value);
             } else {
-                throw new IllegalArgumentException("Character [" + value + "] not supported");
+                throw new IllegalArgumentException("Token [" + value + "] not supported");
             }
         }
     }

@@ -63,14 +63,14 @@ public class TokenVisitorImpl implements TokenVisitor{
         if(!operand2.getClass().equals(Double.class)){
             throw new IllegalArgumentException("Invalid operand [" + (operand2).toString() + "] for divide operator");
         }
-        stack.push((Double)operand1/(Double)operand2);
+        stack.push((Double)operand1/(Double) operand2);
     }
 
     @Override
     public void visit(Abs token) {
         Object operand = stack.pop();
         if(!operand.getClass().equals(Double.class)){
-            throw new IllegalArgumentException("Invalid token [" + (operand).toString() + "] for the sizeof function");
+            throw new IllegalArgumentException("Invalid operand [" + (operand).toString() + "] for the sizeof function");
         }
         stack.push(Math.abs((double)operand));
     }
@@ -79,7 +79,7 @@ public class TokenVisitorImpl implements TokenVisitor{
     public void visit(Sizeof token) {
         Object operand = stack.pop();
         if(!operand.getClass().equals(String.class)){
-            throw new IllegalArgumentException("Invalid token [" + (operand).toString() + "] for the sizeof function");
+            throw new IllegalArgumentException("Invalid operand [" + (operand).toString() + "] for the sizeof function");
         }
         stack.push((double)((String)operand).length() );
     }
