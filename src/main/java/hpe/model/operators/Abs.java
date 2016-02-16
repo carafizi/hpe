@@ -13,7 +13,7 @@ public class Abs extends UnaryOperator implements Token {
     public void process(Stack<Object> stack) {
         init(stack);
         if (!operand.getClass().equals(Double.class)) {
-            throw new IllegalArgumentException("Invalid token [" + (operand).toString() + "] for the abs function");
+            throw new IllegalArgumentException("Invalid token [" + (operand).toString() + "] for the abs operator");
         }
         stack.push(Math.abs((double) operand));
     }

@@ -14,7 +14,7 @@ public class Sizeof extends UnaryOperator implements Token {
     public void process(Stack<Object> stack) {
         init(stack);
         if (!operand.getClass().equals(String.class)) {
-            throw new IllegalArgumentException("Invalid token [" + (operand).toString() + "] for the sizeof function");
+            throw new IllegalArgumentException("Invalid token [" + (operand).toString() + "] for the sizeof operator");
         }
         stack.push((double) ((String) operand).length());
     }
